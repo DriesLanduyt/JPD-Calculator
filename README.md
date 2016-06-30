@@ -19,6 +19,11 @@ Note that these scripts are written in Python 2.x and will not run in Python 3.x
 
 ###Usage
 
+####Network requirements
+
+The model should be developed in Netica, a nodeset 'OUT' should be defined that groups all outputnodes and all statetitles of the outputnodes should be defined numerically
+
+####Example Code
 ```
 import JPDCalculator as jpdc
 import NeticaCode as nc
@@ -27,16 +32,23 @@ import NeticaCode as nc
 net = nc.OpenBayesNet('D:/irectory/of/network/file/netname.neta')
 print net
 
-#Calculate JPD
+#Calculate
 JPDdata = jpdc.JPD(net,['nodename1','nodename2'])
   #or
 JPDdata_all = jpdc.allJPDs(net)
 
-#Plot JPD
+#Plot
 jpdc.drawJPD(JPDdata)
   #or
 jpdc.drawAllJPDs(JPDdata_all)
 
-#To calculate JPD conditional on the fact that node x is in state x
+#To calculate and plot conditional JPDs 
+#conditional on the evidence that node x is in state x
 JPDdata = jpdc.cJPD(net,['nodename1','nodename2'],'nodenamex','statenamex')
+jpdc.drawJPD(JPDdata)
+
+#conditional on evidence inserted in node x
+JPDdata_all = jpdc.allcJPDs(net,'nodenamex',['statenamex','statenamey',...])
+jpdc.drawJPD(JPDdata_all[0]) #conditional on node x is in state x
+jpdc.drawJPD(JPDdata_all[1]) #conditional on node x is in state y
 ```
