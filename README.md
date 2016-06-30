@@ -49,6 +49,6 @@ jpdc.drawJPD(JPDdata)
 
 #conditional on evidence inserted in node x
 JPDdata_all = jpdc.allcJPDs(net,'nodenamex',['statenamex','statenamey',...])
-jpdc.drawJPD(JPDdata_all[0]) #conditional on node x is in state x
-jpdc.drawJPD(JPDdata_all[1]) #conditional on node x is in state y
+jpdc.drawAllJPDs(JPDdata_all[0]) #conditional on node x is in state x
+jpdc.drawAllJPDs(JPDdata_all[1]) #conditional on node x is in state y
 ```
