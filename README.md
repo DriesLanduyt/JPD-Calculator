@@ -10,7 +10,7 @@ Copy the `Netica.dll` file which can be found in your local installation of Neti
 
 Whether you need the 32bit or 64bit version of the `Netica.dll` will depend on your Python installation. To check this, run the following code in your Python console:
 
-```
+```python
 import struct
 print 8*struct.calcsize("P")
 ```
@@ -24,13 +24,12 @@ Note that these scripts are written in Python 2.x and will not run in Python 3.x
 The model should be developed in Netica, a nodeset 'OUT' should be defined that groups all outputnodes and all statetitles of the outputnodes should be defined numerically
 
 ####Example Code
-```
+```python
 import JPDCalculator as jpdc
 import NeticaCode as nc
 
 #Open network
 net = nc.OpenBayesNet('D:/irectory/of/network/file/netname.neta')
-print net
 
 #Calculate
 JPDdata = jpdc.JPD(net,['nodename1','nodename2'])
