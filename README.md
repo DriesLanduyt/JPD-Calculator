@@ -51,3 +51,7 @@ JPDdata_all = jpdc.allcJPDs(net,'nodenamex',['statenamex','statenamey',...])
 jpdc.drawAllJPDs(JPDdata_all[0]) #conditional on node x is in state x
 jpdc.drawAllJPDs(JPDdata_all[1]) #conditional on node x is in state y
 ```
+
+###Reference
+
+* Landuyt, D., Broekx, S., Goethals, P.L.M. (2016). Bayesian belief networks to analyse trade-offs among ecosystem services at the regional scale. Ecological Indicators 71, 327-335 ([full text](https://www.researchgate.net/publication/305618261_Bayesian_belief_networks_to_analyse_trade-offs_among_ecosystem_services_at_the_regional_scale))
